@@ -86,7 +86,7 @@ router.get(config.apiPre + '/:apiVer/:key/:code'+'.png',async(ctx,next) =>{
     let key = ctx.params.key ? ctx.params.key : "";
     //参数校验
     if(_.trim(code).length == 0 || _.trim(key).length == 0){
-        return ctx.body = returnMsg(400,'参数错误，请检查',3);
+        return ctx.body = returnMsg(400,'参数错误，请检查！',3);
     }
     let p = new captcha(config.captcha.size.width,config.captcha.size.height,code);
     p.color(config.captcha.background.red,config.captcha.background.green, config.captcha.background.blue, config.captcha.background.alpha);
